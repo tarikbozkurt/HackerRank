@@ -1,0 +1,27 @@
+#After 3 hours I arrived at a "brain-stopping" solution
+number = int(input())
+#first pyramid
+value='H'
+space=" "
+if number> 0 and number <50 and number%2==1:
+    for i in range(0,number):
+        print(" "*(number - (i+1))+"H"*((i*2)+1)+" ".rjust(number*3+5,' ')+" "*(number-i-2))
+
+    #between first pyramid to ebove body
+    for i in range(0,number+1):
+        print(" "*(int(number/2))+"H"*(number)+" ".ljust(number*3,' ')+"H"*(number)+" ".rjust(int(number/2),' '))
+        
+    #body
+    for y in range(0,(int((number+1)/2))):
+        print(" "*(int(number/2))+"H"*(number*5)+" ".rjust(int(number/2),' '))
+
+    #between under first pyramid to ebove body
+    for i in range(0,number+1):
+        print(" "*(int(number/2))+"H"*(number)+" ".ljust(number*3,' ')+"H"*(number)+" ".rjust(int(number/2),' '))
+        
+    for i in range(0,number):
+        a=number-i
+        
+        print(" ".ljust(number*3+(number)," ")+ " "*(i)+"H"*((a*2)-1)+" "*(i))
+else:
+    print('Wrong value')
