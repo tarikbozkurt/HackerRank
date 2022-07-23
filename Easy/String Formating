@@ -1,0 +1,32 @@
+def print_formatted(number):
+    # her bir değer arasında maximum değerin ( number ) binary formatındaki değerini "width" değişkenine atıyoruz.
+    width = len("{0:b}".format(number))
+    
+    #döngümüz 1 den başlayıp number +1 e kadar number ' ın içerisinde gezecek, "i" olarak..
+    for i in range(1,number+1):
+    #burada şöyle bir durum var
+    """
+    eğer;
+          {0:d} olursa bu "int" değere gider(decimal)
+          {0:f} olursa bu "float" değere gider
+          {0:o} olursa bu "Octal " değere gider
+          {0:X} olursa bu " hexadecimal" değere gider.. ( 12-17 , A-F )
+          {0:b} olursa bu " Binary " değere gider .. ( 17 = 10001 )
+    
+    """
+      
+         #her bir değerin arasındaki mesafenin ne olursa olsun sabit kalmasını istiyoruz.
+         # burada mevcut olan w bize bu işlemi yapmamızı sağlayacak..
+         #   {0:5d} olursa "d" den önce 4 kaymış "d" ile beraber 5 kaymış olacak. yani;
+         # ....5
+         
+         # ....1....1....1....1
+         # ....2....2....2...10
+         # ....3....3....3...11
+         # ....4....4....4..100
+         
+         print("{0:{w}d} {0:{w}o} {0:{w}X} {0:{w}b}".format(i,w = width))
+      
+    
+#örnek deneme..
+print_formatted(17)
